@@ -135,6 +135,21 @@ public class BinarySearchTree {
         if (r.right == null && r.left == null){
             return 1;
         }
-        return 1 + nodeCount(r.left) + nodeCount(r.right);
+        return 1 + Math.max(findHeight(r.left),findHeight(r.right));
+    }
+
+    public boolean isBalanced() {
+        return isBalanced(this.root);
+    }
+    private boolean isBalanced(Node r) {
+        if (r == null){
+            return true;
+        }
+        if (Math.abs(findHeight(r.left) - findHeight(r.right))  <= 1){
+            return isBalanced(r.left) && isBalanced(r.right);
+        }
+        else {
+            return false;
+        }
     }
 }

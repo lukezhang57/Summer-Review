@@ -1,14 +1,30 @@
 public class TreeTester {
     public static void main(String[] args){
         BinarySearchTree t = new BinarySearchTree();
+        t.add(10);
+        t.add(7);
+        t.add(15);
         t.add(5);
-        t.add(3);
-        t.add(8);
-        t.add(1);
-        t.add(4 );
-        t.add(6);
         t.add(11);
+        t.add(20);
+        t.add(2);
+        t.add(30);
+        t.add(8);
+
+        System.out.print("Height: ");
+        System.out.println(t.findHeight());
+        System.out.println("Expected: 4");
+
+        System.out.print("Balanced: ");
+        System.out.println(t.isBalanced());
+        System.out.println("Expected: true");
+
+        System.out.print("Sum: ");
+        System.out.println(t.sum());
+        System.out.println("Expected: 108");
+
+        System.out.print("# of nodes: ");
         System.out.println(t.nodeCount());
-        System.out.println("Expected: 7");
+        System.out.println("Expected: 9");
     }
 }
