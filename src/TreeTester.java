@@ -26,5 +26,13 @@ public class TreeTester {
         System.out.print("# of nodes: ");
         System.out.println(t.nodeCount());
         System.out.println("Expected: 9");
+
+        System.out.print("# of leaves: ");
+        System.out.println(t.numOfLeaves());
+        System.out.println("Expected: 4");
+
+        System.out.print("Sum of leaves: ");
+        System.out.println(t.sumOfLeaves());
+        System.out.println("Expected: 51");
     }
 }

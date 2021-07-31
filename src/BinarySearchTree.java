@@ -118,9 +118,6 @@ public class BinarySearchTree {
         if (r == null){
             return 0;
         }
-        if (r.right == null && r.left == null){
-            return 1;
-        }
         return 1 + nodeCount(r.left) + nodeCount(r.right);
     }
 
@@ -131,9 +128,6 @@ public class BinarySearchTree {
     private int findHeight(Node r){
         if (r == null){
             return 0;
-        }
-        if (r.right == null && r.left == null){
-            return 1;
         }
         return 1 + Math.max(findHeight(r.left),findHeight(r.right));
     }
@@ -151,5 +145,33 @@ public class BinarySearchTree {
         else {
             return false;
         }
+    }
+
+    public int sumOfLeaves(){
+        return sumOfLeaves(root);
+    }
+
+    private int sumOfLeaves(Node n){
+        if (n == null){
+            return 0;
+        }
+        if (n.left == null && n.right == null){
+            return (Integer) n.value;
+        }
+        return sumOfLeaves(n.left) + sumOfLeaves(n.right);
+    }
+
+    public int numOfLeaves(){
+        return numOfLeaves(root);
+    }
+
+    private int numOfLeaves(Node n){
+        if (n == null){
+            return 0;
+        }
+        if (n.left == null && n.right == null){
+            return 1;
+        }
+        return numOfLeaves(n.left) + numOfLeaves(n.right);
     }
 }
