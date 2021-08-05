@@ -174,4 +174,19 @@ public class BinarySearchTree {
         }
         return numOfLeaves(n.left) + numOfLeaves(n.right);
     }
+
+    public boolean search(Comparable obj){
+        return search(obj, root);
+    }
+    private boolean search(Comparable obj, Node n){
+        if (n == null){
+            return false;
+        }
+        if (obj.compareTo(n.value) == 0){
+            return true;
+        }
+        else {
+            return search(n.left) || search(n.right);
+        }
+    }
 }
