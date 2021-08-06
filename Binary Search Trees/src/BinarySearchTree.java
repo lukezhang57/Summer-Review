@@ -178,6 +178,7 @@ public class BinarySearchTree {
     public boolean search(Comparable obj){
         return search(obj, root);
     }
+
     private boolean search(Comparable obj, Node n){
         if (n == null){
             return false;
@@ -186,7 +187,7 @@ public class BinarySearchTree {
             return true;
         }
         else {
-            return search(n.left) || search(n.right);
+            return search(obj, n.left) || search(obj, n.right);
         }
     }
 }

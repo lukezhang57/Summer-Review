@@ -35,7 +35,11 @@ public class TreeTester {
         System.out.println(t.sumOfLeaves());
         System.out.println("Expected: 51");
 
-        System.out.println(t.search(20));
+        System.out.println(t.search(2));
         System.out.println("Expected: true");
+        System.out.println(t.search(2));
+        System.out.println("Expected: true");
+        System.out.println(t.search(31));
+        System.out.println("Expected: false");
     }
 }
