@@ -190,4 +190,21 @@ public class BinarySearchTree {
             return search(obj, n.left) || search(obj, n.right);
         }
     }
+
+    public void invertTree(){
+        invertTree(root);
+    }
+
+    private void invertTree(Node root){
+        if (root == null){
+            return;
+        }
+        Node temp = root.left;
+        root.left = root.right;
+        root.right = temp;
+
+        invertTree(root.left);
+        invertTree(root.right);
+    }
+
 }
